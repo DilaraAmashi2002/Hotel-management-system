@@ -1,12 +1,9 @@
-import express from "express";
-import { createCheckoutSession, retrieveSessionStatus } from "../application/payment";
-import isAuthenticated from "./middleware/authentication-middleware";
+import express from 'express';
+import { createReview,getReviewsForHotel} from '../application/review';
+import isAuthenticated from './middleware/authentication-middleware';
 
-const paymentsRouter = express.Router();
+const reviewRouter = express.Router();
 
-paymentsRouter.route("/create-checkout-session").post(isAuthenticated, createCheckoutSession);
-paymentsRouter.route("/session-status").get(isAuthenticated, retrieveSessionStatus);
-
-export default paymentsRouter;
-
-
+reviewRouter.route('/').post(isAuthenticated,createReview);
+reviewRouter.route('/hotel/:hotelId').get(isAuthenticated, getReviewsForHotel);
+export default reviewRouter;

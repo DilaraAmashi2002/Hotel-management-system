@@ -17,3 +17,18 @@ const connectDB = async () => {
 };
 
 export default connectDB;
+// Method 2
+
+// const connectDB =() => {
+//     const MONGODB_URL="mongodb+srv://yalindidasanya:3ZtOIoGYpLHD7ilH@cluster0.buupra8.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+//     mongoose
+//     .connect(process.env.MONGODB_URL)
+//     .then(() => {
+//         console.log("MongoDB connected successfully");
+//     })
+//     .catch(err => {
+//         console.error("Error connecting to MongoDB:", err.message);
+//         process.exit(1);
+//     });
+// };
+

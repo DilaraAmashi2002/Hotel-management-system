@@ -1,8 +1,14 @@
-class ValidationError extends Error {
-  constructor(message: string) {
-    super(message);
-    this.name = "ValidationError";
-  }
-}
+import { OpenAI } from "openai";
 
-export default ValidationError;
+const openai = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY,
+});
+
+export const generateEmbedding = async (text: string) => {
+  const response = await openai.embeddings.create({
+    model: "text-embedding-3-small",
+    dimensions: 1536,
+    input: text,
+  });
+  return response.data[0].embedding;
+};
