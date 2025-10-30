@@ -71,20 +71,20 @@ function Navigation() {
 
   return (
     <nav
-      className="z-50 bg-black/90 backdrop-blur-md flex items-center justify-between px-4 sm:px-6 text-white py-3 rounded-full mx-4 my-3 relative"
+      className="z-50 bg-gradient-to-r from-black/90 via-gray-900/90 to-black/90 backdrop-blur-md shadow-2xl shadow-black/30 border border-white/10 flex items-center justify-between px-4 sm:px-6 text-white py-3 rounded-full mx-4 my-4 relative"
       aria-label="Main navigation"
     >
       <div className="flex items-center space-x-8">
         <Link
           to="/"
-          className="text-xl font-bold focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black rounded"
+          className="text-xl font-bold tracking-tight focus:outline-none focus:ring-2 focus:ring-white/70 focus:ring-offset-2 focus:ring-offset-black rounded"
         >
-          Hotelplus
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-sky-200 to-sky-400 drop-shadow">Hotelplus</span>
         </Link>
         <div className="hidden md:flex space-x-6" role="menubar">
           <Link
             to="/"
-            className="transition-colors text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black rounded px-2 py-1"
+            className="transition-colors text-sm/6 hover:text-sky-300/90 focus:outline-none focus:ring-2 focus:ring-white/70 focus:ring-offset-2 focus:ring-offset-black rounded px-2 py-1"
             role="menuitem"
             aria-current={location.pathname === '/' ? 'page' : undefined}
           >
@@ -94,7 +94,7 @@ function Navigation() {
 
           <Link
             to="/hotels"
-            className="transition-colors text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black rounded px-2 py-1"
+            className="transition-colors text-sm/6 hover:text-sky-300/90 focus:outline-none focus:ring-2 focus:ring-white/70 focus:ring-offset-2 focus:ring-offset-black rounded px-2 py-1"
             role="menuitem"
             aria-current={location.pathname === '/hotels' ? 'page' : undefined}
           >
@@ -105,7 +105,7 @@ function Navigation() {
           {user?.publicMetadata?.role === "admin" && (
             <Link
               to="/admin/create-hotel"
-              className="transition-colors text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black rounded px-2 py-1"
+              className="transition-colors text-sm/6 hover:text-sky-300/90 focus:outline-none focus:ring-2 focus:ring-white/70 focus:ring-offset-2 focus:ring-offset-black rounded px-2 py-1"
               role="menuitem"
             >
               Create Hotel
@@ -118,7 +118,7 @@ function Navigation() {
         <Button
           variant="ghost"
           size="sm"
-          className="text-xs hidden md:flex focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black"
+          className="text-xs hidden md:flex hover:text-sky-300/90 focus:outline-none focus:ring-2 focus:ring-white/70 focus:ring-offset-2 focus:ring-offset-black"
           aria-label="Change language"
         >
           <Globe className="h-4 w-4 mr-2" aria-hidden="true" />
@@ -130,14 +130,14 @@ function Navigation() {
             variant="ghost"
             size="sm"
             asChild
-            className="text-xs hidden md:flex focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black"
+            className="text-xs hidden md:flex hover:text-sky-300/90 focus:outline-none focus:ring-2 focus:ring-white/70 focus:ring-offset-2 focus:ring-offset-black"
           >
             <Link to="/sign-in">Log In</Link>
           </Button>
           <Button
             size="sm"
             asChild
-            className="bg-white text-black hover:bg-gray-200 text-xs hidden md:flex focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-black"
+            className="bg-gradient-to-r from-sky-300 to-sky-500 text-black hover:from-sky-200 hover:to-sky-400 text-xs hidden md:flex focus:outline-none focus:ring-2 focus:ring-sky-400 focus:ring-offset-2 focus:ring-offset-black"
           >
             <Link to="/sign-up">Sign Up</Link>
           </Button>
@@ -148,7 +148,7 @@ function Navigation() {
           <Button
             size="sm"
             asChild
-            className="bg-white text-black hover:bg-gray-200 text-xs hidden md:flex focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-black"
+            className="bg-gradient-to-r from-sky-300 to-sky-500 text-black hover:from-sky-200 hover:to-sky-400 text-xs hidden md:flex focus:outline-none focus:ring-2 focus:ring-sky-400 focus:ring-offset-2 focus:ring-offset-black"
           >
             <Link to="/account">My Account</Link>
           </Button>
@@ -160,7 +160,7 @@ function Navigation() {
             ref={buttonRef}
             variant="ghost"
             size="icon"
-            className="relative z-20 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black rounded-full"
+            className="relative z-20 hover:text-sky-300/90 focus:outline-none focus:ring-2 focus:ring-white/70 focus:ring-offset-2 focus:ring-offset-black rounded-full"
             onClick={toggleMenu}
             aria-expanded={isMenuOpen}
             aria-haspopup="true"
@@ -179,7 +179,7 @@ function Navigation() {
             <div
               ref={menuRef}
               id="mobile-menu"
-              className="absolute right-0 mt-2 w-56 rounded-xl bg-black border border-gray-800 shadow-lg py-2 px-3 animate-in fade-in slide-in-from-top-5 duration-200 z-50"
+              className="absolute right-0 mt-2 w-56 rounded-xl bg-gradient-to-b from-black to-gray-900 border border-white/10 shadow-xl shadow-black/30 py-2 px-3 animate-in fade-in slide-in-from-top-5 duration-200 z-50"
               style={{ top: "calc(100% + 8px)" }}
               role="menu"
               aria-orientation="vertical"
@@ -189,8 +189,8 @@ function Navigation() {
                 <Link
                   to="/"
                   className={`text-sm font-medium transition-colors rounded px-2 py-1 ${location.pathname === '/'
-                    ? 'text-white bg-white/20'
-                    : 'hover:text-gray-300'
+                    ? 'text-white bg-white/10 ring-1 ring-white/10'
+                    : 'hover:text-sky-300/90'
                     }`}
                   role="menuitem"
                   onClick={closeMenu}
@@ -202,8 +202,8 @@ function Navigation() {
                 <Link
                   to="/hotels"
                   className={`text-sm font-medium transition-colors rounded px-2 py-1 ${location.pathname === '/hotels'
-                      ? 'text-white bg-white/20'
-                      : 'hover:text-gray-300'
+                      ? 'text-white bg-white/10 ring-1 ring-white/10'
+                      : 'hover:text-sky-300/90'
                     }`}
                   role="menuitem"
                   onClick={closeMenu}
@@ -216,8 +216,8 @@ function Navigation() {
                   <Link
                     to="/admin/create-hotel"
                     className={`text-sm font-medium transition-colorsrounded px-2 py-1 ${location.pathname === '/admin/create-hotel'
-                        ? 'text-white bg-white/20'
-                        : 'hover:text-gray-300'
+                        ? 'text-white bg-white/10 ring-1 ring-white/10'
+                        : 'hover:text-sky-300/90'
                       }`}
                     role="menuitem"
                     onClick={closeMenu}
@@ -231,7 +231,7 @@ function Navigation() {
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="justify-start h-8 px-2 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black"
+                  className="justify-start h-8 px-2 hover:text-sky-300/90 focus:outline-none focus:ring-2 focus:ring-white/70 focus:ring-offset-2 focus:ring-offset-black"
                   role="menuitem"
                 >
                   <Globe className="h-4 w-4 mr-2" aria-hidden="true" />
@@ -250,7 +250,7 @@ function Navigation() {
                   </Link>
                   <Button
                     size="sm"
-                    className="bg-white text-black hover:bg-gray-200 w-full mt-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-black"
+                    className="bg-gradient-to-r from-sky-300 to-sky-500 text-black hover:from-sky-200 hover:to-sky-400 w-full mt-2 focus:outline-none focus:ring-2 focus:ring-sky-400 focus:ring-offset-2 focus:ring-offset-black"
                     asChild
                     onClick={closeMenu}
                     role="menuitem"
@@ -262,7 +262,7 @@ function Navigation() {
                 <SignedIn>
                   <Button
                     size="sm"
-                    className="bg-white text-black hover:bg-gray-200 w-full mt-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-black"
+                    className="bg-gradient-to-r from-sky-300 to-sky-500 text-black hover:from-sky-200 hover:to-sky-400 w-full mt-2 focus:outline-none focus:ring-2 focus:ring-sky-400 focus:ring-offset-2 focus:ring-offset-black"
                     asChild
                     onClick={closeMenu}
                     role="menuitem"
