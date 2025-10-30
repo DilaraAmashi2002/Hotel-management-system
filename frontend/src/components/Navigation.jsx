@@ -79,7 +79,7 @@ function Navigation() {
           to="/"
           className="text-xl font-bold focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black rounded"
         >
-          Horizone
+          Hotelplus
         </Link>
         <div className="hidden md:flex space-x-6" role="menubar">
           <Link
