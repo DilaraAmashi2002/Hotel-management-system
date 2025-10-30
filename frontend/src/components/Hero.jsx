@@ -73,7 +73,7 @@ export default function Hero() {
   // };
 
   return (
-    <div className="relative h-[500px] md:h-[600px] py-3 mx-4 overflow-hidden rounded-3xl bg-black z-0">
+    <div className="relative h-[500px] md:h-[600px] py-3 mx-4 overflow-hidden rounded-3xl bg-black z-0 ring-1 ring-white/10 shadow-2xl shadow-black/30">
       {/* Background Images */}
       {heroImages.map((image, index) => (
         <div
@@ -84,18 +84,17 @@ export default function Hero() {
           )}
           style={{ backgroundImage: `url(${image})` }}
         >
-          <div className="absolute inset-0 bg-black/40"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/50 to-black/70"></div>
         </div>
       ))}
 
       {/* Hero Content */}
       <div className="relative z-10 flex flex-col items-center text-white justify-center h-full px-4 sm:px-8 ">
-        <h1 className="text-4xl md:text-6xl font-bold mb-4 text-center">
-          Find Your Best Staycation
+        <h1 className="text-4xl md:text-6xl font-bold mb-4 text-center tracking-tight">
+          Discover Your Next Stay with <span className="bg-clip-text text-transparent bg-gradient-to-r from-sky-200 to-sky-400">Hotelplus</span>
         </h1>
-        <p className="text-base md:text-lg mb-8 text-center max-w-2xl">
-          Describe your dream destination and experience, and we'll find the
-          perfect place for you.
+        <p className="text-base md:text-lg mb-8 text-center max-w-2xl text-white/90">
+          Smart search, curated results, and seamless booking for unforgettable trips.
         </p>
 
         {/* Search Form */}
