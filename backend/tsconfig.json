@@ -10,7 +10,7 @@
   "outDir": "dist",
   "noEmit": false,
     "resolveJsonModule": true,
-    "allowImportingTsExtensions": true,
+    "allowImportingTsExtensions": false,
   
 
   },
